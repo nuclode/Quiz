@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vogella.android.quiz.SignUp">
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/userNameText"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/username"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="51dp"
+        android:ems="10"
+        android:hint="@string/passwordText"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/mobile"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/password"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="59dp"
+        android:ems="10"
+        android:hint="@string/mobileText"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/branch"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/mobile"
+        android:layout_below="@+id/mobile"
+        android:layout_marginTop="61dp"
+        android:ems="10"
+        android:hint="@string/branchText"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:text="@string/SignUpText" />
+</RelativeLayout>

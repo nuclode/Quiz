@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="addNewUser">If you are not registered\nClick Here...</string>
+    <string name="userNameText">Username</string>
+    <string name="passwordText">Password</string>
+    <string name="userText">User</string>
+    <string name="adminText">Admin</string>
+    <string name="loginText">Login</string>
+    <string name="SignUpText">Sign Up</string>
+    <string name="mobileText">Mobile</string>
+    <string name="branchText">Branch</string>
+    <string name="Instructions">1. Select a language.\n2. You will be provided 5 questions of a language</string>
+    <string name="cText">C</string>
+    <string name="cppText">C++</string>
+    <string name="javaText">Java</string>
+    <string name="pythonText">Python</string>
+    <string name="startText">Start</string>
+    <string name="noneText">None</string>
+    <string name="submitText">Submit</string>
+    <string name="skipText">Skip</string>
+    <string-array name="cQues">
+        "Which of these is incorrect variable name in C?",
+        "Let i=5\nWhat is i++ * ++i?",
+        "Which of these is not data type in C?",
+        "Which of the format specifier is used to print float values in C?",
+        "If two strings are equal the strcmp() returns "
+    </string-array>
+    <string-array name="cOpt">
+        "var1", "VaR1", "1Var", "var_1",
+        "42" "36" "30" 35",
+        "int" ,"char" ,"bool" ,"float"
+        "%F", "%lf", "%d", "%f"
+        "1", "0", "-1", "Yes"
+    </string-array>
+    <string-array name="cRes">
+        "1Var", "42", "bool", "%f", "0"
+    </string-array>
+
+    <string-array name="cppQues">
+        "Which of the following type of class allows only one object of it to be created?",
+        "Which of the following is not a member of class?",
+        "How many instances of abstract class can be created?",
+        "Which of the following can not be friend?",
+        "cout is an "
+    </string-array>
+    <string-array name="cppOpt">
+        "Virtual class", "Abstract class", "Singleton class", "Friend class",
+        "Static function", "Friend function", "Const function", "Virtual function",
+        "1", "5", "As many you want", "0",
+        "Function", "Class", "Object", "Operator function",
+        "operator", "function", "object", "macro"
+    </string-array>
+    <string-array name="cppRes">
+        "Singleton class", "Friend function", "0", "Object", "object"
+    </string-array>
+</resources>
