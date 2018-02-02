@@ -18,39 +18,120 @@
     <string name="noneText">None</string>
     <string name="submitText">Submit</string>
     <string name="skipText">Skip</string>
+    <string name="resultText">Result</string>
+    <string name="langText">Language</string>
+    <string name="correctText">Correct</string>
+    <string name="wrongText">Wrong</string>
+    <string name="perText">Percentage</string>
+    <string name="thanksText">Thanks... Keep Playing</string>>
     <string-array name="cQues">
-        "Which of these is incorrect variable name in C?",
-        "Let i=5\nWhat is i++ * ++i?",
-        "Which of these is not data type in C?",
-        "Which of the format specifier is used to print float values in C?",
-        "If two strings are equal the strcmp() returns "
+        <item>Which of these is incorrect variable name in C?</item>
+        <item>Let i=5\nWhat is i++ * ++i?</item>
+        <item>Which of these is not data type in C?</item>
+        <item>Which of the format specifier is used to print float values in C?</item>
+        <item>If two strings are equal the strcmp() returns </item>
     </string-array>
     <string-array name="cOpt">
-        "var1", "VaR1", "1Var", "var_1",
-        "42" "36" "30" 35",
-        "int" ,"char" ,"bool" ,"float"
-        "%F", "%lf", "%d", "%f"
-        "1", "0", "-1", "Yes"
+        <item>var1</item>
+        <item>VaR1</item>
+        <item>1Var</item>
+        <item>var_1</item>
+        <item>42</item>
+        <item>36</item>
+        <item>30</item>
+        <item>35</item>
+        <item>int</item>
+        <item>char</item>
+        <item>bool</item>
+        <item>float</item>
+        <item>%F</item>
+        <item>%lf</item>
+        <item>%d</item>
+        <item>%f</item>
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+        <item>Yes</item>
     </string-array>
     <string-array name="cRes">
-        "1Var", "42", "bool", "%f", "0"
+        <item>1Var</item>
+        <item>42</item>
+        <item>bool</item>
+        <item>%f</item>
+        <item>0</item>
     </string-array>
 
     <string-array name="cppQues">
-        "Which of the following type of class allows only one object of it to be created?",
-        "Which of the following is not a member of class?",
-        "How many instances of abstract class can be created?",
-        "Which of the following can not be friend?",
-        "cout is an "
+        <item>Which of the following type of class allows only one object of it to be created?</item>
+        <item>Which of the following is not a member of class?</item>
+        <item>How many instances of abstract class can be created?</item>
+        <item>Which of the following can not be friend?</item>
+        <item>cout is an </item>
     </string-array>
     <string-array name="cppOpt">
-        "Virtual class", "Abstract class", "Singleton class", "Friend class",
-        "Static function", "Friend function", "Const function", "Virtual function",
-        "1", "5", "As many you want", "0",
-        "Function", "Class", "Object", "Operator function",
-        "operator", "function", "object", "macro"
+        <item>Virtual class</item>
+        <item>Abstract class</item>
+        <item>Singleton class</item>
+        <item>Friend class</item>
+        <item>Static function</item>
+        <item>Friend function</item>
+        <item>Const function</item>
+        <item>Virtual function</item>
+        <item>1</item>
+        <item>5</item>
+        <item>As many you want</item>
+        <item>0</item>
+        <item>Function</item>
+        <item>Class</item>
+        <item>Object</item>
+        <item>Operator function</item>
+        <item>operator</item>
+        <item>function</item>
+        <item>object</item>
+        <item>macro</item>
     </string-array>
     <string-array name="cppRes">
-        "Singleton class", "Friend function", "0", "Object", "object"
+        <item>Singleton class</item>
+        <item>Friend function</item>
+        <item>0</item>
+        <item>Object</item>
+        <item>object</item>
+    </string-array>
+
+    <string-array name="javaQues">
+        <item>What is the name of the method used to start a thread execution?</item>
+        <item>Which is true about a method-local inner class?</item>
+        <item>Which is a valid keyword in Java?</item>
+        <item>Which one is a valid declaration of boolean?</item>
+        <item>What is the numerical range of char?</item>
+    </string-array>
+    <string-array name="javaOpt">
+        <item>init();</item>
+        <item>start();</item>
+        <item>run();</item>
+        <item>resume();</item>
+        <item>Item must be marked final.</item>
+        <item>It can be marked abstract.</item>
+        <item>It can be marked public.</item>
+        <item>It can be marked static.</item>
+        <item>interface</item>
+        <item>string</item>
+        <item>Float</item>
+        <item>unsigned</item>
+        <item>boolean b = 0;</item>
+        <item>boolean b = 'false';</item>
+        <item>boolean b = false;</item>
+        <item>boolean b = no;</item>
+        <item>-128 to 127</item>
+        <item>-(2^15) to (2^15) - 1</item>
+        <item>0 to 32767</item>
+        <item>0 to 65535</item>
+    </string-array>
+    <string-array name="javaRes">
+        <item>start();</item>
+        <item>It can be marked abstract.</item>
+        <item>interface</item>
+        <item>boolean b = false;</item>
+        <item>0 to 65535</item>
     </string-array>
 </resources>

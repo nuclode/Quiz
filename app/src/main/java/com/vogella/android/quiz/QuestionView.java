@@ -12,6 +12,14 @@ import android.widget.Toast;
 
 public class QuestionView extends AppCompatActivity {
 
+    TextView question;
+    RadioButton opt1, opt2, opt3, opt4, none;
+    RadioGroup options;
+    Button submit, skip;
+    int qno = 0;
+    String ques[], opt[], res[];
+    static int acc = 0, wa = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,56 +27,73 @@ public class QuestionView extends AppCompatActivity {
 
         Intent i = getIntent();
         String lang = i.getStringExtra("key");
-        String arrQues[ 5];
-        String quesOpt[ 20];
-        String rightAns[ 5];
+
+        question = findViewById(R.id.question);
+        opt1 = findViewById(R.id.opt1);
+        opt2 = findViewById(R.id.opt2);
+        opt3 = findViewById(R.id.opt3);
+        opt4 = findViewById(R.id.opt4);
+        none = findViewById(R.id.none);
+        options = findViewById(R.id.options);
+        submit = findViewById(R.id.submit);
+        skip = findViewById(R.id.skip);
+
         if (lang.equals("C")) {
-            arrQues = getResources().getStringArray(R.array.cQues);
-            quesOpt = getResources().getStringArray(R.array.cOpt);
-            rightAns = getResources().getStringArray(R.array.cRes);
+            ques = getResources().getStringArray(R.array.cQues);
+            opt = getResources().getStringArray(R.array.cOpt);
+            res = getResources().getStringArray(R.array.cRes);
         } else if (lang.equals("C++")) {
-            arrQues = getResources().getStringArray(R.array.cppQues);
-            quesOpt = getResources().getStringArray(R.array.cppOpt);
-            rightAns = getResources().getStringArray(R.array.cppRes);
+            ques = getResources().getStringArray(R.array.cppQues);
+            opt = getResources().getStringArray(R.array.cppOpt);
+            res = getResources().getStringArray(R.array.cppRes);
         }
         //else if(lang.equals("Java"))
         //else if(lang.equals("Python"))
-        askQuestion(arrQues, quesOpt, rightAns);
+        askQuestion();
     }
 
-    public void askQuestion(String ques[], String opt[], final String res[]) {
-        TextView question = findViewById(R.id.question);
-        RadioButton opt1 = findViewById(R.id.opt1);
-        RadioButton opt2 = findViewById(R.id.opt2);
-        RadioButton opt3 = findViewById(R.id.opt3);
-        RadioButton opt4 = findViewById(R.id.opt4);
-        RadioButton none = findViewById(R.id.none);
-        final RadioGroup options = findViewById(R.id.options);
-        Button submit = findViewById(R.id.submit);
-        Button skip = findViewById(R.id.skip);
-        int i;
-        for (i = 0; i < 5; ) {
-            question.setText(ques[i]);
-            opt1.setText(opt[4 * i]);
-            opt2.setText(opt[4 * i + 1]);
-            opt3.setText(opt[4 * i + 2]);
-            opt4.setText(opt[4 * i + 3]);
+    public void askQuestion() {
+        question.setText(ques[qno]);
+        opt1.setText(opt[4 * qno]);
+        opt2.setText(opt[4 * qno + 1]);
+        opt3.setText(opt[4 * qno + 2]);
+        opt4.setText(opt[4 * qno + 3]);
+        none.setChecked(true);
 
-            submit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int id = options.getCheckedRadioButtonId();
-                    RadioButton selButton = findViewById(id);
-                    if(selButton.getText().toString().equals("None"))
-                        Toast.makeText(QuestionView.this, "Press skip button", Toast.LENGTH_SHORT).show();
-                    else if(selButton.getText().toString().equals(res[i]));
-                    Toast.makeText(QuestionView.this, "You made it", Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(QuestionView.this, "Oops but you are wrong", Toast.LENGTH_SHORT).show();
-                    i++;
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int id = options.getCheckedRadioButtonId();
+                RadioButton selButton = findViewById(id);
+                if (selButton.getText().toString().equals("None"))
+                    Toast.makeText(QuestionView.this, "Press skip button", Toast.LENGTH_SHORT).show();
+                else if (selButton.getText().toString().equals(res[qno])) {
+                    acc++;
+                    qno++;
+                } else {
+                    wa++;
+                    qno++;
                 }
 
-            });
-        }
+                if (qno == 5) {
+                    Intent i = new Intent(QuestionView.this, Result.class);
+                    startActivity(i);
+                }
+                askQuestion();
+            }
+
+        });
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RadioButton b = findViewById(options.getCheckedRadioButtonId());
+                if(b.getText().toString().equals("None"))
+                    qno++;
+                else
+                    Toast.makeText(QuestionView.this, "Select none to skip question", Toast.LENGTH_SHORT).show();
+                askQuestion();
+            }
+        });
     }
 }

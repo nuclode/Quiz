@@ -14,6 +14,7 @@ public class Home extends AppCompatActivity {
     Button start;
     RadioGroup lang;
     TextView name;
+    static String language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,8 @@ public class Home extends AppCompatActivity {
                 Intent i = new Intent(Home.this, QuestionView.class);
                 int id = lang.getCheckedRadioButtonId();
                 RadioButton selLang = findViewById(id);
-                i.putExtra("key",selLang.getText().toString());
+                language = selLang.getText().toString();
+                i.putExtra("key",language);
                 startActivity(i);
             }
         });
