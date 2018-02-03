@@ -25,9 +25,6 @@ public class QuestionView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_view);
 
-        Intent i = getIntent();
-        String lang = i.getStringExtra("key");
-
         question = findViewById(R.id.question);
         opt1 = findViewById(R.id.opt1);
         opt2 = findViewById(R.id.opt2);
@@ -38,21 +35,32 @@ public class QuestionView extends AppCompatActivity {
         submit = findViewById(R.id.submit);
         skip = findViewById(R.id.skip);
 
-        if (lang.equals("C")) {
+        if (Home.language.equals("C")) {
             ques = getResources().getStringArray(R.array.cQues);
             opt = getResources().getStringArray(R.array.cOpt);
             res = getResources().getStringArray(R.array.cRes);
-        } else if (lang.equals("C++")) {
+        } else if (Home.language.equals("C++")) {
             ques = getResources().getStringArray(R.array.cppQues);
             opt = getResources().getStringArray(R.array.cppOpt);
             res = getResources().getStringArray(R.array.cppRes);
+        } else if (Home.language.equals("Java")) {
+            ques = getResources().getStringArray(R.array.javaQues);
+            opt = getResources().getStringArray(R.array.javaOpt);
+            res = getResources().getStringArray(R.array.javaRes);
+        } else if (Home.language.equals("Python")) {
+            ques = getResources().getStringArray(R.array.pythonQues);
+            opt = getResources().getStringArray(R.array.pythonOpt);
+            res = getResources().getStringArray(R.array.pythonRes);
         }
-        //else if(lang.equals("Java"))
-        //else if(lang.equals("Python"))
         askQuestion();
     }
 
     public void askQuestion() {
+        if (qno == 5) {
+            Intent i = new Intent(QuestionView.this, Result.class);
+            startActivity(i);
+            return;
+        }
         question.setText(ques[qno]);
         opt1.setText(opt[4 * qno]);
         opt2.setText(opt[4 * qno + 1]);
@@ -74,11 +82,6 @@ public class QuestionView extends AppCompatActivity {
                     wa++;
                     qno++;
                 }
-
-                if (qno == 5) {
-                    Intent i = new Intent(QuestionView.this, Result.class);
-                    startActivity(i);
-                }
                 askQuestion();
             }
 
@@ -88,7 +91,7 @@ public class QuestionView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 RadioButton b = findViewById(options.getCheckedRadioButtonId());
-                if(b.getText().toString().equals("None"))
+                if (b.getText().toString().equals("None"))
                     qno++;
                 else
                     Toast.makeText(QuestionView.this, "Select none to skip question", Toast.LENGTH_SHORT).show();

@@ -13,6 +13,7 @@ public class SignUp extends AppCompatActivity {
     EditText username, password, mobile, branch;
     Button submit;
     static String Username, Password, Mobile, Branch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

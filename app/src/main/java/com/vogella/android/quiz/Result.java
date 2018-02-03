@@ -1,13 +1,15 @@
 package com.vogella.android.quiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Result extends AppCompatActivity {
 
-    TextView language, name, correct, wrong, percent;
+    TextView language, name, correct, wrong, percent, keepPlaying;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,16 +21,25 @@ public class Result extends AppCompatActivity {
         correct = findViewById(R.id.correct);
         wrong = findViewById(R.id.wrong);
         percent = findViewById(R.id.percent);
+        keepPlaying = findViewById(R.id.keepPlaying);
 
         int acc = QuestionView.acc;
         int wa = QuestionView.wa;
-        double per = acc/5 * 100.00;
+        double per = acc / 5.00 * 100.00;
 
         language.setText(Home.language);
         name.setText(SignUp.Username);
         correct.setText("" + acc);
         wrong.setText("" + wa);
         percent.setText("" + per);
+
+        keepPlaying.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Result.this, Home.class);
+                startActivity(i);
+            }
+        });
 
     }
 }

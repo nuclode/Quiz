@@ -33,7 +33,6 @@ public class Home extends AppCompatActivity {
                 int id = lang.getCheckedRadioButtonId();
                 RadioButton selLang = findViewById(id);
                 language = selLang.getText().toString();
-                i.putExtra("key",language);
                 startActivity(i);
             }
         });

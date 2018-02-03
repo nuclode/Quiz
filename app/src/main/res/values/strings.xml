@@ -134,4 +134,43 @@
         <item>boolean b = false;</item>
         <item>0 to 65535</item>
     </string-array>
+
+    <string-array name="pythonQues">
+        <item>Which of these is not a core data type?</item>
+        <item>Which of the following function convert a string to a float in python?</item>
+        <item>What is the output of the expression : 3*1**3</item>
+        <item>What is the output of the following segment :chr(ord('A'))</item>
+        <item>What is the output of 9//2</item>
+    </string-array>
+
+    <string-array name="pythonOpt">
+        <item>Lists</item>
+        <item>Dictionary</item>
+        <item>Tuples</item>
+        <item>Class</item>
+        <item>int(x [,base])</item>
+        <item>long(x,[base]</item>
+        <item>float(x)</item>
+        <item>str(x)</item>
+        <item>27</item>
+        <item>9</item>
+        <item>3</item>
+        <item>1</item>
+        <item>A</item>
+        <item>B</item>
+        <item>a</item>
+        <item>Error</item>
+        <item>4.5</item>
+        <item>4.0</item>
+        <item>4</item>
+        <item>Error</item>
+    </string-array>
+
+    <string-array name="pythonRes">
+        <item>Class</item>
+        <item>float(x)</item>
+        <item>3</item>
+        <item>A</item>
+        <item>4</item>
+    </string-array>
 </resources>

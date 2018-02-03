@@ -40,11 +40,10 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 String inputUserName = username.getText().toString();
                 String inputPassWord = password.getText().toString();
-                if(inputUserName.equals(SignUp.Username) && inputPassWord.equals(SignUp.Password)) {
+                if (inputUserName.equals(SignUp.Username) && inputPassWord.equals(SignUp.Password)) {
                     Intent i = new Intent(Login.this, Home.class);
                     startActivity(i);
-                }
-                else
+                } else
                     t.show();
             }
         });
